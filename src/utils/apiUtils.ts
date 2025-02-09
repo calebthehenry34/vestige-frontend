@@ -1,5 +1,4 @@
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
-import { useNotifications } from '../context/NotificationContext';
 import { API_URL } from '../config';
 
 interface RetryConfig {
@@ -72,8 +71,6 @@ async function retryRequest<T>(
 }
 
 export const useApi = () => {
-  const { showNotification } = useNotifications();
-
   const request = async <T>(
     config: AxiosRequestConfig,
     retryConfig?: RetryConfig
@@ -91,9 +88,9 @@ export const useApi = () => {
           error.response?.data?.message ||
           error.message ||
           'An unexpected error occurred';
-        showNotification(message, 'error');
+        console.error(message);
       } else {
-        showNotification('An unexpected error occurred', 'error');
+        console.error('An unexpected error occurred');
       }
       throw error;
     }

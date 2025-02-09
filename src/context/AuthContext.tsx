@@ -2,8 +2,6 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authService } from '../services/authService';
 import { User, AuthContextType, ProfileUpdateData, OnboardingData } from '../types/auth';
-import { useNotifications } from './NotificationContext';
-
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export const useAuth = () => {
@@ -17,7 +15,6 @@ export const useAuth = () => {
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const { showNotification } = useNotifications();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -54,10 +51,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         navigate('/profile');
       }
 
-      showNotification('Successfully logged in', 'success');
+      console.log('Successfully logged in');
     } catch (error: any) {
       const message = error.response?.data?.message || 'Failed to login';
-      showNotification(message, 'error');
+      console.error(message);
       throw error;
     } finally {
       setIsLoading(false);
@@ -70,10 +67,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const user = await authService.register({ email, password, username });
       setUser(user);
       navigate('/onboarding');
-      showNotification('Registration successful! Please complete your profile.', 'success');
+      console.log('Registration successful! Please complete your profile.');
     } catch (error: any) {
       const message = error.response?.data?.message || 'Failed to register';
-      showNotification(message, 'error');
+      console.error(message);
       throw error;
     } finally {
       setIsLoading(false);
@@ -86,9 +83,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       await authService.logout();
       setUser(null);
       navigate('/login');
-      showNotification('Successfully logged out', 'success');
+      console.log('Successfully logged out');
     } catch (error: any) {
-      showNotification('Failed to logout', 'error');
+      console.error('Failed to logout');
       throw error;
     } finally {
       setIsLoading(false);
@@ -100,10 +97,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setIsLoading(true);
       const updatedUser = await authService.updateProfile(data);
       setUser(updatedUser);
-      showNotification('Profile updated successfully', 'success');
+      console.log('Profile updated successfully');
     } catch (error: any) {
       const message = error.response?.data?.message || 'Failed to update profile';
-      showNotification(message, 'error');
+      console.error(message);
       throw error;
     } finally {
       setIsLoading(false);
@@ -116,10 +113,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const updatedUser = await authService.completeOnboarding(data);
       setUser(updatedUser);
       navigate('/profile');
-      showNotification('Onboarding completed successfully', 'success');
+      console.log('Onboarding completed successfully');
     } catch (error: any) {
       const message = error.response?.data?.message || 'Failed to complete onboarding';
-      showNotification(message, 'error');
+      console.error(message);
       throw error;
     } finally {
       setIsLoading(false);
