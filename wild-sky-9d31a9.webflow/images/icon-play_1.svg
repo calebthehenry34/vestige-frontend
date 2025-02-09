@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="9px" viewBox="0 0 6 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Triangle</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-Copy-8" transform="translate(-148.000000, -148.000000)" fill="#FFFFFF">
+            <polygon id="Triangle" transform="translate(151.000000, 152.500000) rotate(90.000000) translate(-151.000000, -152.500000) " points="151 149.5 155.5 155.5 146.5 155.5"></polygon>
+        </g>
+    </g>
+</svg>

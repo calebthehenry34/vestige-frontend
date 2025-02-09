@@ -1,0 +1,12 @@
+# Redirect all routes to index.html for client-side routing
+/*    /index.html   200
+
+# Redirect www to non-www
+https://www.getvestige.com/* https://getvestige.com/:splat 301!
+
+# Redirect HTTP to HTTPS
+http://getvestige.com/* https://getvestige.com/:splat 301!
+http://www.getvestige.com/* https://getvestige.com/:splat 301!
+
+# Handle API redirects if needed
+/api/*  ${REACT_APP_API_URL}/:splat  200

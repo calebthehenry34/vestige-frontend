@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="48px" viewBox="0 0 46 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ic-002</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.152213 0 0 0 0 0.774081 0 0 0 0 0.876808 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic-002" transform="translate(-1142.000000, -105.000000)" filter="url(#filter-1)">
+            <g transform="translate(1142.000000, 105.000000)">
+                <path d="M18,13 C27.6649831,13 35.5,20.8350169 35.5,30.5 C35.5,40.1649831 27.6649831,48 18,48 C8.33501688,48 0.5,40.1649831 0.5,30.5 C0.5,20.8350169 8.33501688,13 18,13 Z M38,0 C42.418278,0 46,3.581722 46,8 C46,12.418278 42.418278,16 38,16 C33.581722,16 30,12.418278 30,8 C30,3.581722 33.581722,0 38,0 Z" id="Combined-Shape" fill="#6312FF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

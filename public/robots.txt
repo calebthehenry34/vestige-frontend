@@ -1,0 +1,12 @@
+# Allow all web crawlers to access all content
+User-agent: *
+Allow: /
+
+# Sitemap location (to be added when deployed)
+# Sitemap: https://www.getvestige.com/sitemap.xml
+
+# Disallow crawling of authentication and user-specific pages
+Disallow: /login
+Disallow: /register
+Disallow: /settings
+Disallow: /onboarding

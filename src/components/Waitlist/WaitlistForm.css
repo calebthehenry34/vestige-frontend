@@ -1,0 +1,96 @@
+.waitlist-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.input-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.email-input {
+  flex: 1;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid #333333;
+  background: #1a1a1a;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: #ae52e3;
+  box-shadow: 0 0 0 2px rgba(174, 82, 227, 0.2);
+}
+
+.button {
+  padding: 16px 32px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+}
+
+.button.color-red {
+  background: #ae52e3;
+  color: #ffffff;
+}
+
+.button.color-red:hover {
+  background: #9152e3;
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.status-message {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.status-message.success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.status-message.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.status-message.info {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.position-info {
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .input-group {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
